@@ -29,6 +29,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Start NERDTree and put the cursor back in the other window
 " autocmd VimEnter * NERDTree | wincmd p
 
+let g:airline_powerline_fonts=1
+
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -44,6 +46,14 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'm-pilia/vim-ccls'
 " linting
 Plug 'dense-analysis/ale'
+
+Plug 'mattn/emmet-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf.vim'
+Plug 'github/copilot.vim'
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 color gruvbox
