@@ -5,6 +5,7 @@ set smartindent
 set bg=dark
 set nowrap           " do not automatically wrap on load
 set formatoptions-=t " do not automatically wrap text when typing
+set is hls           " highlight search :noh to revert
 
 " 4-space tab in all files, real 8-wide tab char in Makefiles
 " Only do this part when compiled with support for autocommands
@@ -51,8 +52,8 @@ Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf.vim'
-Plug 'github/copilot.vim'
-Plug 'vim-airline/vim-airline'
+"Plug 'github/copilot.vim'
+"Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
