@@ -1,3 +1,4 @@
+" ~/.config/nvim/init.vim
 syntax on
 set number
 set autoindent
@@ -21,13 +22,14 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " spaces
 
-" Use CTRL+W+W to jump between vim windows
+" Use CTRL+W W to jump between vim windows
 nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-b> :noh<CR>
 
-" Start NERDTree and put the cursor back in the other window
+" Start NERDTree on startup and put the cursor back in the other window
 " autocmd VimEnter * NERDTree | wincmd p
 
 let g:airline_powerline_fonts=1
