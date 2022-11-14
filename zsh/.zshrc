@@ -103,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ta="tmux attach-session -t"
+alias v="vim"
+
 path+=("/opt/apache-maven-3.8.5/bin")
 
 export PATH
