@@ -81,6 +81,9 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export EDITOR='nvim'
+export REPO='arqcp'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -103,8 +106,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ta="tmux attach-session -t"
-alias v="vim"
+alias arqcp="tmuxinator start arqcp"
+alias v="nvim"
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
