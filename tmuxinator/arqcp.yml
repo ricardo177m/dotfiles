@@ -18,7 +18,7 @@ windows:
       panes:
           - vim:
               <% unless EX.empty? %>
-              - v .
+              - v asm.s
               <% else %>
               - ls
               <% end %>

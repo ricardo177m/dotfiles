@@ -30,7 +30,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-b> :noh<CR>
 
 " Start NERDTree on startup and put the cursor back in the other window
-" autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * NERDTree | wincmd p
 
 let g:airline_powerline_fonts=1
 
