@@ -1,0 +1,34 @@
+# ~/.config/tmuxinator/arqcp.yml
+
+<% CURR_MODULE = "modulo4" %>
+<% DIR = "~/dev/arqcp/" + CURR_MODULE + "/" %>
+
+<% if @args[0] and Dir.exists?(File.expand_path(DIR + "ex" + @args[0])) %>
+<% EX = "ex" + @args[0] %>
+<% else %>
+<% EX = "" %>
+<% end %>
+
+name: arqcp
+root: <%= DIR + EX %>
+
+windows:
+  - editor:
+      layout: 6425,211x49,0,0[211x37,0,0{165x37,0,0,0,45x37,166,0,1},211x11,0,38,2]
+      panes:
+          - vim:
+              <% unless EX.empty? %>
+              - v .
+              <% else %>
+              - ls
+              <% end %>
+          - tests:
+              - cd ~/dev/utests/<%= CURR_MODULE %>/<%= EX %>
+              <% unless EX.empty? %>
+              - make run
+              <% else %>
+              - ls
+              <% end %>
+          - build:
+              - ls
+
