@@ -26,8 +26,8 @@ set expandtab       " spaces
 nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <C-b> :noh<CR>
+nnoremap <C-f> :noh<CR>
+nnoremap <C-b> :undo<CR>
 
 " Start NERDTree on startup and put the cursor back in the other window
 autocmd VimEnter * NERDTree | wincmd p
