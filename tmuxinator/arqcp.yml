@@ -17,12 +17,14 @@ windows:
       layout: 6425,211x49,0,0[211x37,0,0{165x37,0,0,0,45x37,166,0,1},211x11,0,38,2]
       panes:
           - vim:
+              - clear
               <% unless EX.empty? %>
               - v asm.s
               <% else %>
               - ls
               <% end %>
           - tests:
+              - clear
               - cd ~/dev/utests/<%= CURR_MODULE %>/<%= EX %>
               <% unless EX.empty? %>
               - make run
@@ -30,5 +32,6 @@ windows:
               - ls
               <% end %>
           - build:
+              - clear
               - ls
 
