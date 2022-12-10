@@ -1,6 +1,6 @@
 # ~/.config/tmuxinator/arqcp.yml
 
-<% CURR_MODULE = "modulo4" %>
+<% CURR_MODULE = "modulo5" %>
 <% DIR = "~/dev/arqcp/" + CURR_MODULE + "/" %>
 
 <% if @args[0] and Dir.exists?(File.expand_path(DIR + "ex" + @args[0])) %>
