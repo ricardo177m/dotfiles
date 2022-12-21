@@ -82,9 +82,10 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='nvim'
-export REPO='arqcp'
+# export REPO='arqcp'
 
 path+=("/usr/local/go/bin")
+path+=("/home/$USER/.local/bin")
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -108,9 +109,11 @@ path+=("/usr/local/go/bin")
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias arqcp="tmuxinator start arqcp"
+# alias arqcp="tmuxinator start arqcp"
 alias v="nvim"
+alias vim="nvim"
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
 export PATH
+
