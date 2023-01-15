@@ -112,6 +112,7 @@ path+=("/home/$USER/.local/bin")
 # alias arqcp="tmuxinator start arqcp"
 alias v="nvim"
 alias vim="nvim"
+alias python="python3"
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
