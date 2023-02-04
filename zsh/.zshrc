@@ -73,6 +73,7 @@ ZSH_THEME="lambda-mod"
 plugins=(
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -86,6 +87,9 @@ export EDITOR='nvim'
 
 path+=("/usr/local/go/bin")
 path+=("/home/$USER/.local/bin")
+
+# add go bin to path
+path+=("/home/$USER/go/bin")
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,8 +117,14 @@ path+=("/home/$USER/.local/bin")
 alias v="nvim"
 alias vim="nvim"
 alias python="python3"
+alias muc="muc --file $HISTFILE --count 10 --pretty --shell=\"zsh\""
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
 export PATH
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
