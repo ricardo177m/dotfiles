@@ -40,8 +40,8 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-flagship'
+" Plug 'morhetz/gruvbox'
+" Plug 'tpope/vim-flagship'
 " Language Server Protocol
 Plug 'prabirshrestha/vim-lsp'
 " C highlighting
@@ -60,5 +60,5 @@ Plug 'tpope/vim-commentary'
 
 call plug#end()
 
-color gruvbox
+" color gruvbox
 
