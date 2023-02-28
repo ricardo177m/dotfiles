@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# Get brightness
+get_backlight() {
+	INFO=$(brightnessctl i | sed -n "s/.*(\([0-9]*%\)).*/\1/p")
+	echo $INFO
+}
+
+# Get icons
+get_icon() {
+	backlight="$(get_backlight)"
+	current="${backlight%%%}"
+	if [[ ("$current" -ge "0") && ("$current" -le "33") ]]; then
+		icon=""
+	elif [[ ("$current" -ge "33") && ("$current" -le "67") ]]; then
+		icon=""
+	elif [[ ("$current" -ge "67") && ("$current" -le "100") ]]; then
+		icon=""
+	fi
+}
+
+# Notify
+notify_user() {
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i " " " $icon Brightness : $(get_backlight)"
+}
+
+# Increase brightness
+inc_backlight() {
+	brightnessctl set 5%+ && get_icon && notify_user
+}
+
+# Decrease brightness
+dec_backlight() {
+	brightnessctl set 5%- && get_icon && notify_user
+}
+
+# Execute accordingly
+if [[ "$1" == "--get" ]]; then
+	get_backlight
+elif [[ "$1" == "--inc" ]]; then
+	inc_backlight
+elif [[ "$1" == "--dec" ]]; then
+	dec_backlight
+else
+	get_backlight
+fi
