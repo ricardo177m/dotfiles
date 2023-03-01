@@ -9,12 +9,14 @@
     "modules-left": [
         "clock",
         "custom/weather",
-        "wlr/workspaces"
+        "wlr/workspaces",
+        "cpu",
+        "memory"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "tray",
-        // "network",
+        "network",
         "custom/updates",
         "custom/language",
         "battery",
@@ -116,5 +118,28 @@
          "format":"",
          "tooltip": false,
          "on-click":"wlogout",
-    }
+    },
+    "network": {
+	"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ipaddr}/{cidr}",
+        "format-linked": "  {ifname} (No IP)",
+        "format-disconnected": "睊 Disconnected",
+        "format-disabled": "睊 Disabled",
+        "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+    },
+    "memory": {
+         "interval": 10,
+         "format": " Mem: {used:0.1f}G",
+    },
+    "disk": {
+         "interval": 30,
+         "format": " FREE: {free}",
+    },
+    "cpu": {
+         "interval": 5,
+         "format": " CPU: {usage}%",
+    },
 }

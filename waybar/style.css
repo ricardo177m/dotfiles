@@ -60,6 +60,9 @@ tooltip {
 #network,
 #workspaces,
 #tray,
+#cpu,
+#memory,
+#disk,
 #backlight {
     background: #1e1e2e;
     padding: 0px 10px;
@@ -115,8 +118,13 @@ tooltip {
 
 #network {
     color: #f9e2af;
+    border-radius: 10px 0px 0px 10px;
     border-left: 0px;
     border-right: 0px;
+}
+
+#backlight {
+    border-radius: 10px 0px 0px 10px;
 }
 
 #pulseaudio {
@@ -139,7 +147,7 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
     border-left: 0px;
 }
@@ -149,3 +157,18 @@ tooltip {
     border-right: 0px;
     margin-left: 0px;
 }
+
+#cpu {
+    color: #d19a66;
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 10px;
+    border-right: 0px;
+}
+
+#memory {
+    color: #c678dd;
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 0px;
+    border-right: 0px;
+}
+
