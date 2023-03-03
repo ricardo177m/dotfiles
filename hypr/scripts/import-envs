@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# save environment variables that will be added to systemd
+sys_env=$(systemctl --user show-environment | cut -d'=' -f 1 | sort)
+user_env=$(env | cut -d'=' -f 1 | sort)
+new_env=$(echo "$sys_env" | comm -13 - <(echo "$user_env"))
+shared_env=$(echo "$sys_env" | comm -12 - <(echo "$user_env"))
+
+# import environment variables from the login manager
+systemctl --user import-environment $new_env $shared_env
+
+
