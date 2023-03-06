@@ -1,0 +1,18 @@
+#!/bin/bash
+
+get_bluetooth_status() {
+	status=$(bluetoothctl show | grep Powered | cut -d " " -f 2)
+}
+
+toggle_bt() {
+	get_bluetooth_status
+	if [ "$status" = "yes" ]; then
+		bluetoothctl power off
+	else
+		bluetoothctl power on
+	fi
+
+}
+
+toggle_bt
+
