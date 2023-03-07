@@ -20,41 +20,41 @@ button:hover {
 }
 
 button:focus {
-    background-color: #cba6f7;
-    color: #1e1e2e;
+    background-color: #661ecb;
+    /*color: #1e1e2e;*/
 }
 
 #lock {
     background-image: image(url("./lock.png"));
 }
 #lock:focus {
-    background-image: image(url("./lock-hover.png"));
+/*    background-image: image(url("./lock-hover.png"));*/
 }
 
 #logout {
     background-image: image(url("./logout.png"));
 }
 #logout:focus {
-    background-image: image(url("./logout-hover.png"));
+/*    background-image: image(url("./logout-hover.png"));*/
 }
 
 #suspend {
     background-image: image(url("./sleep.png"));
 }
 #suspend:focus {
-    background-image: image(url("./sleep-hover.png"));
+/*    background-image: image(url("./sleep-hover.png"));*/
 }
 
 #shutdown {
     background-image: image(url("./power.png"));
 }
 #shutdown:focus {
-    background-image: image(url("./power-hover.png"));
+/*    background-image: image(url("./power-hover.png"));*/
 }
 
 #reboot {
     background-image: image(url("./restart.png"));
 }
 #reboot:focus {
-    background-image: image(url("./restart-hover.png"));
+/*    background-image: image(url("./restart-hover.png"));*/
 }
