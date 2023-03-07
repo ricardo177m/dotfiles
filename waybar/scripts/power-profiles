@@ -1,0 +1,51 @@
+#!/bin/bash
+
+profiles=("balanced" "power-saver" "performance")
+
+toggle_profile() {
+	current=$(powerprofilesctl get)
+	current=${current%$'\n'}
+
+	# get the index of the current profile
+	index=0
+	for i in "${!profiles[@]}"; do
+		if [[ "${profiles[$i]}" = "${current}" ]]; then
+			index=$i
+			break
+		fi
+	done
+
+	# get the next profile
+	next_index=$((index+1))
+	if [ $next_index -ge ${#profiles[@]} ]; then
+		next_index=0
+	fi
+	
+	next=${profiles[$next_index]}
+
+	# echo $next_index
+	# echo $next
+	powerprofilesctl set $next
+}
+
+get_profile() {
+	sleep .3
+	current=$(powerprofilesctl get)
+	status=""
+	if [ $current == "power-saver" ]; then
+		status=" Power Saver"
+	elif [ $current == "balanced" ]; then
+		status=" Balanced"
+	elif [ $current == "performance" ]; then
+		status=" Performance"
+	fi
+	echo $status
+}
+
+if [[ "$1" == "--toggle" ]]; then
+	toggle_profile
+elif [[ "$1" == "--get" ]]; then
+	get_profile
+else
+	toggle_profile
+fi

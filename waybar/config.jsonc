@@ -19,7 +19,7 @@
         "tray",
         "bluetooth",
         "network",
-        "custom/updates",
+        "custom/power-profiles",
         "custom/language",
         "battery",
         "backlight",
@@ -54,7 +54,7 @@
         "interval": 7200,
         "format": " {}"
     },
-   "custom/weather" : {
+    "custom/weather" : {
         "tooltip" : true,
         "format" : "{}",
         "interval" : 30,
@@ -122,8 +122,9 @@
          "on-click":"wlogout",
     },
     "bluetooth": {
-        "format-on": " on",
-        "format-disabled": " off",
+        "format-on": " On",
+        "format-off": " Off",
+        "format-disabled": "",
         "format-connected": " {device_alias}",
 	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
         "on-click": "bash ~/.config/waybar/scripts/bluetooth",
@@ -159,6 +160,14 @@
         "critical-threshold": 75,
         "format": " {temperatureC}°C",
         "format-critical": " {temperatureC}°C"
-    }
+    },
+    "custom/power-profiles": {
+        "exec": "~/.config/waybar/scripts/power-profiles --get",
+        "interval": 300,
+        "tooltip": false,
+        "format": "{}",
+        "on-click": "~/.config/waybar/scripts/power-profiles --toggle",
+        "restart-interval": 1
+    },
 }
 

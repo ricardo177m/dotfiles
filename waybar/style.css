@@ -65,6 +65,7 @@ tooltip {
 #memory,
 #disk,
 #temperature,
+#custom-power-profiles,
 #backlight {
     background: #1e1e2e;
     padding: 0px 10px;
@@ -187,6 +188,12 @@ tooltip {
     color: #f1ae53;
     border-radius: 0px 10px 10px 0px;
     margin-left: 0px;
+    border-right: 0px;
+}
+
+#custom-power-profiles {
+    color: #f5c2e7;
+    border-left: 0px;
     border-right: 0px;
 }
 
