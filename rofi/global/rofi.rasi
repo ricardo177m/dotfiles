@@ -1,5 +1,5 @@
 configuration {
-    font: "Inter Regular 10";
+    font: "Cartograph CF Nerd Font 10";
     sidebar-mode: true;
     show-icons: true;
     icon-theme: "Nordzy";
@@ -23,7 +23,7 @@ configuration {
 
 window {
     transparency: "real";
-    background-color: #1917244D;
+    background-color: #191724EE;
     text-color: #6e6a86;
     location: west;
     anchor: west;
@@ -32,6 +32,7 @@ window {
     height: 70%;
     width: 350px;
     orientation: vertical;
+    border-radius: 0 10px 10px 0;
 }
 
 prompt {
@@ -41,7 +42,7 @@ prompt {
 button {
     action: "ok";
     str: " ";
-    font: "FantasqueSansMono Nerd Font 16";
+    font: "Cartograph CF Nerd Font 16";
     expand: false;
     text-color: #6e6a86;
     background-color: @transparent;
@@ -50,7 +51,7 @@ button {
 }
 
 entry {
-    font: "Inter Regular 12";
+    font: "Cartograph CF Nerd Font 12";
     background-color: @transparent;
     text-color: #6e6a86;
     expand: true;
@@ -125,7 +126,7 @@ element-icon {
 }
 
 element-text {
-    font: "Inter Regular 11";
+    font: "Cartograph CF Nerd Font 11";
     expand: true;
     horizontal-align: 0;
     vertical-align: 0.5;
