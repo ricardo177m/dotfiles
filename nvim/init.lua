@@ -9,7 +9,7 @@ vim.g.maplocalleader = ' '
 -- Binds
 vim.keymap.set('n', '<C-b>', ':undo<CR>')
 vim.keymap.set('n', '<C-y>', ':redo<CR>')
-vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>')
+-- vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<C-h>', ':set wrap!<CR>')
 
 -- Indentation
@@ -93,11 +93,11 @@ require('lazy').setup({
     },
   },
 
-  { -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+  { -- Theme inspired by Atom: navarasu/onedark.nvim
+    'Mofiqul/dracula.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'dracula'
     end,
   },
 
@@ -107,7 +107,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'dracula',
         component_separators = '|',
         section_separators = '',
       },
