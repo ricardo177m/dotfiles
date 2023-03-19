@@ -25,36 +25,37 @@ button:focus {
 }
 
 #lock {
-    background-image: image(url("./lock.png"));
+    background-image: image(url("./assets/lock.png"));
 }
 #lock:focus {
-/*    background-image: image(url("./lock-hover.png"));*/
+/*    background-image: image(url("./assets/lock-hover.png"));*/
 }
 
 #logout {
-    background-image: image(url("./logout.png"));
+    background-image: image(url("./assets/logout.png"));
 }
 #logout:focus {
-/*    background-image: image(url("./logout-hover.png"));*/
+/*    background-image: image(url("./assets/logout-hover.png"));*/
 }
 
 #suspend {
-    background-image: image(url("./sleep.png"));
+    background-image: image(url("./assets/sleep.png"));
 }
 #suspend:focus {
-/*    background-image: image(url("./sleep-hover.png"));*/
+/*    background-image: image(url("./assets/sleep-hover.png"));*/
 }
 
 #shutdown {
-    background-image: image(url("./power.png"));
+    background-image: image(url("./assets/power.png"));
 }
 #shutdown:focus {
-/*    background-image: image(url("./power-hover.png"));*/
+/*    background-image: image(url("./assets/power-hover.png"));*/
 }
 
 #reboot {
-    background-image: image(url("./restart.png"));
+    background-image: image(url("./assets/restart.png"));
 }
 #reboot:focus {
-/*    background-image: image(url("./restart-hover.png"));*/
+/*    background-image: image(url("./assets/restart-hover.png"));*/
 }
+
