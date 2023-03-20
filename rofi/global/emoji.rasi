@@ -6,7 +6,7 @@ configuration {
 }
 
 * {
-	font: "Noto Sans 11";
+	font: "Noto Color Emoji 11";
 	text-color: #eff0eb;
 	background-color: #1917244D;
 	border-color: #00000000;
