@@ -68,11 +68,11 @@ tooltip {
 #temperature,
 #custom-power-profiles,
 #backlight {
-    background: #1e1e2e;
+    /*background: #1e1e2e;*/
     padding: 0px 10px;
     margin: 3px 0px;
-    margin-top: 10px;
-    border: 1px solid #181825;
+    margin-top: 4px;
+    /*border: 1px solid #181825;*/
 }
 
 #tray {
@@ -81,7 +81,7 @@ tooltip {
 }
 
 #workspaces {
-    background: #1e1e2e;
+    /*background: #1e1e2e;*/
     border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
@@ -163,6 +163,18 @@ tooltip {
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
     border-left: 0px;
+}
+
+#battery.charging.warning {
+    color: #a6e3a1;
+}
+
+#battery.discharging.warning {
+    color: #fde874;
+}
+
+#battery.discharging.critical {
+    color: red;
 }
 
 #custom-weather {
