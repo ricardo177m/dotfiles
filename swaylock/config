@@ -8,14 +8,14 @@ font=Prompt
 
 timestr=%X
 datestr=%a %d %b %Y
-fade-in=0.1
+fade-in=0.2
 
 grace=0
 grace-no-mouse
 grace-no-touch
 
-# effect-blur=1x50
-# effect-scale=0.1
+# effect-blur=7x5
+# effect-scale=1
 
 indicator
 indicator-radius=220

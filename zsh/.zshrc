@@ -116,6 +116,7 @@ path+=("/home/$USER/go/bin")
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # alias arqcp="tmuxinator start arqcp"
+# alias scomp="tmuxinator start scomp"
 alias v="nvim"
 alias vim="nvim"
 alias python="python3"
