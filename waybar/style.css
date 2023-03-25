@@ -67,6 +67,7 @@ tooltip {
 #disk,
 #temperature,
 #custom-power-profiles,
+#idle_inhibitor,
 #backlight {
     /*background: #1e1e2e;*/
     padding: 0px 10px;
@@ -134,7 +135,7 @@ tooltip {
     border-right: 0px;
 }
 
-#backlight {
+#backlight, #idle_inhibitor {
     border-radius: 10px 0px 0px 10px;
 }
 
@@ -174,7 +175,9 @@ tooltip {
 }
 
 #battery.discharging.critical {
-    color: red;
+    color: #fff;
+    background-color: red;
+    border-radius: 10px 10px 10px 10px;
 }
 
 #custom-weather {
