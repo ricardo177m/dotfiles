@@ -9,7 +9,6 @@ vim.g.maplocalleader = ' '
 -- Binds
 vim.keymap.set('n', '<C-b>', ':undo<CR>')
 vim.keymap.set('n', '<C-y>', ':redo<CR>')
--- vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<C-h>', ':set wrap!<CR>')
 
 -- Indentation
@@ -93,11 +92,55 @@ require('lazy').setup({
     },
   },
 
-  { -- Theme inspired by Atom: navarasu/onedark.nvim
-    'Mofiqul/dracula.nvim',
+  { -- navarasu/onedark.nvim; Mofiqul/dracula.nvim
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'dracula'
+      require("catppuccin").setup({
+        flavour = "macchiato", -- latte, frappe, macchiato, mocha
+        background = { -- :h background
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = true,
+        show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+        term_colors = false,
+        dim_inactive = {
+          enabled = false,
+          shade = "dark",
+          percentage = 0.15,
+        },
+        no_italic = false, -- Force no italic
+        no_bold = false, -- Force no bold
+        styles = {
+          comments = { "italic" },
+          conditionals = { "italic" },
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = {},
+        },
+        color_overrides = {},
+        custom_highlights = {},
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          telescope = true,
+          notify = false,
+          mini = false,
+          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+        },
+      })
+
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
@@ -107,7 +150,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'dracula',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
       },
@@ -408,6 +451,7 @@ require('neodev').setup()
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities.offsetEncoding = { "utf-8" }
 
 -- Setup mason so it can manage external tooling
 require('mason').setup()
