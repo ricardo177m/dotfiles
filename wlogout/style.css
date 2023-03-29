@@ -59,3 +59,10 @@ button:focus {
 /*    background-image: image(url("./assets/restart-hover.png"));*/
 }
 
+#hibernate {
+    background-image: image(url("./assets/sleep.png"));
+}
+#hibernate:focus {
+/*    background-image: image(url("./assets/sleep-hover.png"));*/
+}
+
