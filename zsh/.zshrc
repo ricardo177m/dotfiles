@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-# [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -116,12 +114,12 @@ path+=("/home/$USER/go/bin")
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # alias arqcp="tmuxinator start arqcp"
-# alias scomp="tmuxinator start scomp"
 alias v="nvim"
 alias vim="nvim"
 alias python="python3"
 alias muc="muc --file $HISTFILE --count 10 --pretty --shell=\"zsh\""
 alias sudo="doas"
+alias tx="tmuxinator start"
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
@@ -134,5 +132,3 @@ export PATH
 # start ssh-agent
 eval $(ssh-agent -s) > /dev/null
 
-# Fig post block. Keep at the bottom of this file.
-# [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

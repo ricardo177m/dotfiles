@@ -1,0 +1,17 @@
+# ~/.config/tmuxinator/scomp.yml
+
+<% last_folder=`folders=(~/dev/scomp/*/); last_folder="${folders[${#folders[@]}-1]}"; echo $last_folder` %>
+
+name: scomp
+root: <%= last_folder %>
+
+windows:
+  - editor:
+      layout: 4c97,142x38,0,0[142x29,0,0,1,142x8,0,30,24]
+      panes:
+          - editor:
+              - clear
+              - nvim .
+          - build:
+              - clear
+
