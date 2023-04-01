@@ -6,5 +6,7 @@ configuration {
   display-drun: "";
   display-window: "﩯 ";
   display-combi: "  ";
+
+  font: "Cartograph CF Nerd Font Medium 11";
 }
-@theme "themes/sidetab-nord.rasi"
+@theme "themes/nord.rasi"
