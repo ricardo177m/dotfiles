@@ -6,6 +6,10 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 0,
+    "output": [
+        "DP-1",
+        "eDP-1"
+    ],
     "modules-left": [
         "clock",
         "custom/weather",
@@ -14,7 +18,9 @@
         "memory",
         "temperature"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
         "tray",
         // "idle_inhibitor",
@@ -28,7 +34,6 @@
         "pulseaudio#microphone",
         "custom/power"
     ],
-
     "hyprland/window": {
         "format": "{}"
     },
@@ -55,12 +60,12 @@
         "interval": 7200,
         "format": " {}"
     },
-    "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
     },
     "tray": {
         "icon-size": 13,
@@ -73,7 +78,11 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
@@ -88,7 +97,19 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""] // 
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ] // 
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -105,7 +126,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
     "pulseaudio#microphone": {
@@ -118,24 +143,24 @@
         "scroll-step": 5
     },
     "custom/power": {
-         "format":"",
-         "tooltip": false,
-         "on-click":"wlogout",
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout",
     },
     "bluetooth": {
         "format-on": " On",
         "format-off": " Off",
         "format-disabled": "",
         "format-connected": " {device_alias}",
-	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
         "on-click": "bash ~/.config/waybar/scripts/bluetooth",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
     "network": {
-	"interval": 5,
+        "interval": 5,
         //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
         "format-wifi": "  {essid}",
         "format-ethernet": "  {ipaddr}/{cidr}",
@@ -146,16 +171,16 @@
         "tooltip-format": " {ifname} via {gwaddr}",
     },
     "memory": {
-         "interval": 10,
-         "format": " {used:0.1f}G", //      
+        "interval": 10,
+        "format": " {used:0.1f}G", //      
     },
     "disk": {
-         "interval": 30,
-         "format": " Free: {free}",
+        "interval": 30,
+        "format": " Free: {free}",
     },
     "cpu": {
-         "interval": 5,
-         "format": " {usage}%",
+        "interval": 5,
+        "format": " {usage}%",
     },
     "temperature": {
         "critical-threshold": 75,
@@ -178,4 +203,3 @@
         }
     }
 }
-
