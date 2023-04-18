@@ -117,7 +117,7 @@ path+=("/home/$USER/go/bin")
 alias v="nvim"
 alias vim="nvim"
 alias python="python3"
-alias muc="muc --file $HISTFILE --count 10 --pretty --shell=\"zsh\""
+alias muc="muc --file $HISTFILE --count 10 --shell=\"zsh\""
 alias sudo="doas"
 alias tx="tmuxinator start"
 
@@ -130,5 +130,7 @@ export PATH
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # start ssh-agent
-eval $(ssh-agent -s) > /dev/null
+# eval $(ssh-agent -s) > /dev/null
+# replaced by ssh-agent.service
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 
