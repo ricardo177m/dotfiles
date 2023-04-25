@@ -39,9 +39,10 @@
     },
     "wlr/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
         "on-click": "activate",
-        //"format": "{icon}",
+        "all-outputs": true,
+        // "format": "{icon}",
+        "sort-by-number": true,
         "persistent_workspaces": {
             "1": [],
             "2": [],
@@ -145,7 +146,7 @@
     "custom/power": {
         "format": "",
         "tooltip": false,
-        "on-click": "wlogout",
+        "on-click": "wlogout"
     },
     "bluetooth": {
         "format-on": " On",
@@ -168,19 +169,19 @@
         "format-disconnected": "睊 Disconnected",
         "format-disabled": "睊 Disabled",
         "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
-        "tooltip-format": " {ifname} via {gwaddr}",
+        "tooltip-format": " {ifname} via {gwaddr}"
     },
     "memory": {
         "interval": 10,
-        "format": " {used:0.1f}G", //      
+        "format": " {used:0.1f}G" //      
     },
     "disk": {
         "interval": 30,
-        "format": " Free: {free}",
+        "format": " Free: {free}"
     },
     "cpu": {
         "interval": 5,
-        "format": " {usage}%",
+        "format": " {usage}%"
     },
     "temperature": {
         "critical-threshold": 75,
