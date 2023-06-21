@@ -115,10 +115,64 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
     'navarasu/onedark.nvim',
+    -- 'catppuccin/nvim',
+    -- 'projekt0n/github-nvim-theme',
+    -- name = 'github-theme',
     priority = 1000,
+    lazy = false,
     config = function()
+      require('onedark').setup {
+        -- Main options --
+        style = 'warmer',             -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+        transparent = false,          -- Show/hide background
+        term_colors = true,           -- Change terminal color as per the selected theme style
+        ending_tildes = false,        -- Show the end-of-buffer tildes. By default they are hidden
+        cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+
+        -- toggle theme style ---
+        toggle_style_key = '<C-B>',                                                          -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+        toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
+
+        -- Change code style ---
+        -- Options are italic, bold, underline, none
+        -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
+        code_style = {
+          comments = 'italic',
+          keywords = 'bold',
+          functions = 'italic',
+          strings = 'none',
+          variables = 'none'
+        },
+
+        -- Lualine options --
+        lualine = {
+          transparent = false, -- lualine center bar transparency
+        },
+
+        -- Custom Highlights --
+        colors = {
+          purple = '#F44336',
+          bright_orange = "#ff8800", -- define a new color
+          -- green = '#00bb77',         -- redefine an existing color
+        },
+        highlights = {
+          -- ["@keyword"] = { fg = '$green' },
+          -- ["@string"] = { fg = '$green' },
+          -- ["@function"] = { fg = '#0000ff', sp = '$cyan', fmt = 'italic' },
+          -- ["@function.builtin"] = { fg = '#0059ff' }
+        },
+        -- },               -- Override default colors
+        -- highlights = {}, -- Override highlight groups
+
+        -- Plugins Config --
+        diagnostics = {
+          darker = true,     -- darker colors for diagnostic
+          undercurl = true,  -- use undercurl instead of underline for diagnostics
+          background = true, -- use background color for virtual text
+        },
+      }
+
       vim.cmd.colorscheme 'onedark'
     end,
   },
@@ -579,10 +633,5 @@ cmp.setup {
   },
 }
 
--- Setup theme
-require('onedark').setup {
-  style = 'warmer'
-}
-require('onedark').load()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
