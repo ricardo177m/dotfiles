@@ -1,8 +1,8 @@
 window {
     font-family: 'Prompt', monospace;
     font-size: 14pt;
-    color: #cdd6f4; /* text */
-    background-color: rgba(30, 30, 46, 0.5);
+    color: #F4DACD; /* text */
+    background-color: rgba(30, 30, 30, 0.6);
 }
 
 button {
@@ -16,11 +16,11 @@ button {
 }
 
 button:hover {
-    background-color: rgba(49, 50, 68, 0.1);
+    /* background-color: rgba(49, 50, 68, 0.1); */
 }
 
 button:focus {
-    background-color: #661ecb;
+    /* background-color: #661ecb; */
     /*color: #1e1e2e;*/
 }
 
@@ -28,41 +28,42 @@ button:focus {
     background-image: image(url("./assets/lock.png"));
 }
 #lock:focus {
-/*    background-image: image(url("./assets/lock-hover.png"));*/
+    background-color: rgba(238, 120, 25, 1);
 }
 
 #logout {
     background-image: image(url("./assets/logout.png"));
 }
 #logout:focus {
-/*    background-image: image(url("./assets/logout-hover.png"));*/
+    background-color: rgba(176, 174, 12, 1);
 }
 
 #suspend {
     background-image: image(url("./assets/sleep.png"));
 }
 #suspend:focus {
-/*    background-image: image(url("./assets/sleep-hover.png"));*/
+    background-color: rgba(18, 114, 178, 1);
 }
 
 #shutdown {
     background-image: image(url("./assets/power.png"));
 }
 #shutdown:focus {
-/*    background-image: image(url("./assets/power-hover.png"));*/
+    background-color: rgba(242, 6, 6, 1);
 }
 
 #reboot {
     background-image: image(url("./assets/restart.png"));
 }
 #reboot:focus {
-/*    background-image: image(url("./assets/restart-hover.png"));*/
+    background-color: rgba(18, 178, 88, 1);
 }
 
 #hibernate {
     background-image: image(url("./assets/sleep.png"));
 }
 #hibernate:focus {
+    background-color: rgba(94, 13, 206, 1);
 /*    background-image: image(url("./assets/sleep-hover.png"));*/
 }
 
