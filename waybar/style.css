@@ -22,7 +22,7 @@ tooltip {
 }
 
 #workspaces button {
-    padding: 5px;
+    padding: 2px;
     color: #313244;
     margin-right: 5px;
 }
@@ -32,21 +32,22 @@ tooltip {
 }
 
 #workspaces button.focused {
+/* #workspaces button.active { */
     color: #a6adc8;
     background: #eba0ac;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #workspaces button.urgent {
     color: #11111b;
     background: #a6e3a1;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #workspaces button:hover {
     background: #11111b;
     color: #cdd6f4;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #custom-language,
