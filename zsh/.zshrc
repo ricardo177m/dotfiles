@@ -117,10 +117,12 @@ path+=("/home/$USER/go/bin")
 # alias arqcp="tmuxinator start arqcp"
 alias v="nvim"
 alias vim="nvim"
-alias python="python3"
+# alias python="python3"
 alias muc="muc --file $HISTFILE --count 10 --shell=\"zsh\""
-alias sudo="doas"
 alias tx="tmuxinator start"
+alias pa="source env/bin/activate"
+alias vpnon="nmcli con up deinet --ask"
+alias vpnoff="nmcli con down deinet"
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
