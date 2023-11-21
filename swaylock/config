@@ -30,12 +30,12 @@ text-clear-color=e0def4
 text-caps-lock-color=e5bf1b
 
 ring-color=28252a
-ring-ver-color=661ecb
+ring-ver-color=ff5400
 ring-wrong-color=ff0000
 ring-clear-color=e0def4
 
 line-color=141215
-line-ver-color=661ecb
+line-ver-color=ff5400
 line-wrong-color=ff0000
 line-clear-color=141215
 
@@ -45,7 +45,8 @@ inside-wrong-color=141215
 inside-clear-color=141215
 
 bs-hl-color=e0def4
-key-hl-color=661ecb
+key-hl-color=ff5400
+# key-hl-color=661ecb
 # caps-lock-bs-hl-color=dededeff
 # caps-lock-key-hl-color=ffd204ff
 
