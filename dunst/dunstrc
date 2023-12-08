@@ -8,12 +8,12 @@
 
     separator_height = 2
 
-    padding = 8
+    padding = 9
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 2
 
-    frame_color = "#89B4FA"
+    frame_color = "#313F57"
     separator_color = frame
 
     sort = yes
@@ -41,18 +41,21 @@
     title = Dunst
     class = Dunst
 
-    corner_radius = 10
-    timeout = 5
+    corner_radius = 5
+    timeout = 8
+
+    font = CaskaydiaCove Nerd Font 10
 
 [urgency_low]
-    background = "#1E1E2E"
+    background = "#232845"
     foreground = "#CDD6F4"
 
 [urgency_normal]
-    background = "#1E1E2E"
+    background = "#232845"
     foreground = "#CDD6F4"
 
 [urgency_critical]
     background = "#1E1E2E"
     foreground = "#CDD6F4"
     frame_color = "#FAB387"
+

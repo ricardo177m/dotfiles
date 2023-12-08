@@ -31,13 +31,13 @@ toggle_profile() {
 get_profile() {
 	sleep .3
 	current=$(powerprofilesctl get)
-	status=""
+	status=""
 	if [ $current == "power-saver" ]; then
-		status=" Power Saver"
+		status="Low"
 	elif [ $current == "balanced" ]; then
-		status=" Balanced"
+		status="Balanced"
 	elif [ $current == "performance" ]; then
-		status=" Performance"
+		status="Perf"
 	fi
 	echo $status
 }

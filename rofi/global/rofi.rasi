@@ -1,5 +1,5 @@
 configuration {
-    font: "Cartograph CF Nerd Font 10";
+    font: "CaskaydiaCove Nerd Font 10";
     sidebar-mode: true;
     show-icons: true;
     icon-theme: "Nordzy";

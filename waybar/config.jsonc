@@ -12,27 +12,27 @@
     ],
     "modules-left": [
         "clock",
-        "custom/weather",
+        // "custom/weather",
         "hyprland/workspaces",
-        "cpu",
+        // "cpu",
+        "custom/updates",
+        "privacy",
         "memory",
         "temperature"
+        // "custom/power-profiles",
     ],
-    "modules-center": [
-        "hyprland/window"
-    ],
+    "modules-center": [], // hyprland/window
     "modules-right": [
         "tray",
         "idle_inhibitor",
         "bluetooth",
+        "custom/vpn",
         "network",
-        "custom/power-profiles",
-        "custom/language",
         "battery",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone",
-        "custom/power"
+        "pulseaudio#microphone"
+        // "custom/power"
     ],
     "hyprland/window": {
         "format": "{}"
@@ -41,25 +41,19 @@
         "disable-scroll": true,
         "on-click": "activate",
         "all-outputs": true,
-        // "format": "{icon}",
+        "format": "{icon}",
         "sort-by-number": true,
-        "persistent_workspaces": {
-            // "1": [],
-            // "2": [],
-            // "3": [],
-            // "4": [],
-            // "5": [],
-            // "6": [],
-            // "7": [],
-            // "8": [],
-            // "9": [],
-            // "10": []
+        "persistent_workspaces": {},
+        "format-icons": {
+            "default": "",
+            "urgent": "",
+            "active": ""
         }
     },
     "custom/updates": {
-        "exec": "(pacman -Qu ; paru -Qua) | wc -l",
-        "interval": 7200,
-        "format": " {}"
+        "exec": "(paru -Qua; pacman -Su --print-format %n,%v) | wc -l",
+        "interval": 3600,
+        "format": "󰇚 {}"
     },
     "custom/weather": {
         "tooltip": true,
@@ -73,16 +67,16 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
+        "format": "  {:%a %d %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "format-icons": [
-            "",
-            "",
-            ""
+            "󰃞",
+            "󰃟",
+            "󰃠"
         ],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
@@ -95,49 +89,48 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format-charging": " {capacity}%", // 󰂄  󱐋
+        "format-plugged": "󰂄 {capacity}%",
+        // "format-alt": "{icon} {time}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ] // 
+            "󰂃",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": true,
-        "format-muted": " Muted",
+        "format-muted": "󰖁 -",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 1",
         "on-scroll-down": "pamixer -d 1",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
             "phone": "",
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                "󰖀",
+                "󰕾"
             ]
         }
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
+        "format-source": "󰍬 {volume}%",
+        "format-source-muted": "󰍭 -",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 1",
         "on-scroll-down": "pamixer --default-source -d 1",
@@ -149,11 +142,11 @@
         "on-click": "wlogout"
     },
     "bluetooth": {
-        "format-on": " On",
-        "format-off": " Off",
+        "format-on": "󰂯 On",
+        "format-off": "󰂲 Off",
         "format-disabled": "",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
         "on-click": "bash ~/.config/waybar/scripts/bluetooth",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -161,27 +154,36 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
     "network": {
-        "interval": 5,
-        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  {ipaddr}/{cidr}",
-        "format-linked": "  {ifname} (No IP)",
-        "format-disconnected": "睊 Disconnected",
-        "format-disabled": "睊 Disabled",
+        "interval": 10,
+        //"interface": "wlan*",
+        "format": "{ifname}",
+        "format-wifi": "{icon} {essid} ({signalStrength}%)", //  
+        "format-ethernet": "󰈀  {ipaddr}",
+        "format-disconnected": "󰤭  No Wifi",
+        "format-disabled": "  Disabled",
         "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
-        "tooltip-format": " {ifname} via {gwaddr}"
+        "tooltip-format": "󰈀 {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "  {essid} @ {ipaddr}/{cidr}",
+        "tooltip-format-ethernet": " {ifname} via {gwaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-icons": [
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
+        ]
     },
     "memory": {
         "interval": 10,
-        "format": " {used:0.1f}G" //      
+        "format": " {used:0.1f}G"
     },
     "disk": {
         "interval": 30,
-        "format": " Free: {free}"
+        "format": "<span foreground='#8394f8'>󰆼</span> Free: {free}"
     },
     "cpu": {
         "interval": 5,
-        "format": " {usage}%"
+        "format": "<span foreground='#98ce67'</span> {usage}%"
     },
     "temperature": {
         "critical-threshold": 75,
@@ -192,9 +194,10 @@
         "exec": "~/.config/waybar/scripts/power-profiles --get",
         "interval": 300,
         "tooltip": false,
-        "format": "{}",
+        "format": "<span foreground='#f5c2e7'>{icon}</span> {}",
         "on-click": "~/.config/waybar/scripts/power-profiles --toggle",
-        "restart-interval": 1
+        "restart-interval": 1,
+        "icon": ""
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -202,5 +205,32 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "custom/vpn": {
+        "exec": "nmcli con show --active | grep -i vpn | cut -d' ' -f1",
+        "interval": 5,
+        "format": "󰌾 {}"
     }
 }

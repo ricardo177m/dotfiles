@@ -2,17 +2,18 @@ window {
     font-family: 'Prompt', monospace;
     font-size: 14pt;
     color: #F4DACD; /* text */
-    background-color: rgba(30, 30, 30, 0.6);
+    background-color: rgba(30, 30, 30, .6);
 }
 
 button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
-    border: none;
+    border: 0;
     background-color: rgba(30, 30, 46, 0);
     margin: 5px;
     transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    color: #ddd; /* text */
 }
 
 button:hover {

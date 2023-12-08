@@ -3,6 +3,9 @@ daemonize
 clock
 ignore-empty-password
 # show-failed-attempts
+disable-caps-lock-text
+
+# image=$HOME/Pictures/wallpapers/wallpaperflare.com_wallpaper.png
 
 font=Prompt
 
@@ -13,9 +16,6 @@ fade-in=0.2
 grace=0
 grace-no-mouse
 grace-no-touch
-
-# effect-blur=7x5
-# effect-scale=1
 
 indicator
 indicator-radius=220
@@ -30,12 +30,12 @@ text-clear-color=e0def4
 text-caps-lock-color=e5bf1b
 
 ring-color=28252a
-ring-ver-color=ff5400
+ring-ver-color=A7C080
 ring-wrong-color=ff0000
 ring-clear-color=e0def4
 
 line-color=141215
-line-ver-color=ff5400
+line-ver-color=A7C080
 line-wrong-color=ff0000
 line-clear-color=141215
 
@@ -45,7 +45,7 @@ inside-wrong-color=141215
 inside-clear-color=141215
 
 bs-hl-color=e0def4
-key-hl-color=ff5400
+key-hl-color=A7C080
 # key-hl-color=661ecb
 # caps-lock-bs-hl-color=dededeff
 # caps-lock-key-hl-color=ffd204ff

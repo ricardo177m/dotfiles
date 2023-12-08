@@ -3,10 +3,9 @@
 configuration {
   show-icons: true;
   icon-theme: "Papirus";
-  display-drun: "";
   display-window: "﩯 ";
   display-combi: "  ";
 
-  font: "Cartograph CF Nerd Font Medium 11";
+  font: "CaskaydiaCove Nerd Font Medium 11";
 }
-@theme "themes/nord.rasi"
+@theme "themes/squared-everforest-mod.rasi"

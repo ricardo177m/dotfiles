@@ -63,7 +63,7 @@ ZSH_THEME="lambda-mod"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=/usr/share/zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -121,8 +121,8 @@ alias vim="nvim"
 alias muc="muc --file $HISTFILE --count 10 --shell=\"zsh\""
 alias tx="tmuxinator start"
 alias pa="source env/bin/activate"
-alias vpnon="nmcli con up deinet --ask"
-alias vpnoff="nmcli con down deinet"
+alias vpnon='f() { nmcli con up $1 --ask };f'
+alias vpnoff="nmcli con down"
 
 path+=("/opt/apache-maven-3.8.5/bin")
 
@@ -136,4 +136,7 @@ export PATH
 # eval $(ssh-agent -s) > /dev/null
 # replaced by ssh-agent.service
 export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+
+autoload -Uz compinit
+compinit
 
