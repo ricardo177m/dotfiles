@@ -53,7 +53,8 @@
     "custom/updates": {
         "exec": "(paru -Qua; pacman -Su --print-format %n,%v) | wc -l",
         "interval": 3600,
-        "format": "󰇚 {}"
+        "format": "󰇚 {}",
+        "on-click": "activate"
     },
     "custom/weather": {
         "tooltip": true,

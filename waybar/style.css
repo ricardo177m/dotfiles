@@ -87,9 +87,9 @@ tooltip {
 }
 
 #window {
-    border-radius: 16px;
-    margin-left: 60px;
-    margin-right: 60px;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 #clock {
