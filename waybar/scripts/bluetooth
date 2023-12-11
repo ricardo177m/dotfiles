@@ -11,7 +11,6 @@ toggle_bt() {
 	else
 		bluetoothctl power on
 	fi
-
 }
 
 toggle_bt
