@@ -64,6 +64,7 @@ tooltip {
 #temperature,
 #custom-power-profiles,
 #idle_inhibitor,
+#custom-recording-screen,
 #backlight {
     background: #232845;
     padding: 0px 10px;
@@ -78,6 +79,12 @@ tooltip {
 #tray {
     border-radius: 5px;
     margin-right: 10px;
+}
+
+#custom-recording-screen {
+    border-radius: 5px;
+    margin-left: 10px;
+    color: #ff2222;
 }
 
 #workspaces {

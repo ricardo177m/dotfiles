@@ -18,8 +18,9 @@
         "custom/updates",
         // "privacy",
         "memory",
-        "temperature"
+        "temperature",
         // "custom/power-profiles",
+        "custom/recording-screen"
     ],
     "modules-center": [], // hyprland/window
     "modules-right": [
@@ -50,19 +51,6 @@
             "active": ""
         }
     },
-    "custom/updates": {
-        "exec": "(paru -Qua; pacman -Su --print-format %n,%v) | wc -l",
-        "interval": 3600,
-        "format": "󰇚 {}",
-        "on-click": "activate"
-    },
-    "custom/weather": {
-        "tooltip": true,
-        "format": "{}",
-        "interval": 30,
-        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type": "json"
-    },
     "tray": {
         "icon-size": 13,
         "spacing": 10
@@ -92,7 +80,6 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%", // 󰂄  󱐋
         "format-plugged": "󰂄 {capacity}%",
-        // "format-alt": "{icon} {time}",
         "format-icons": [
             "󰂃",
             "󰁺",
@@ -137,11 +124,6 @@
         "on-scroll-down": "pamixer --default-source -d 1",
         "scroll-step": 5
     },
-    "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "wlogout"
-    },
     "bluetooth": {
         "format-on": "󰂯 On",
         "format-off": "󰂲 Off",
@@ -156,7 +138,6 @@
     },
     "network": {
         "interval": 10,
-        //"interface": "wlan*",
         "format": "{ifname}",
         "format-wifi": "{icon} {essid} ({signalStrength}%)", //  
         "format-ethernet": "󰈀  {ipaddr}",
@@ -191,6 +172,18 @@
         "format": " {temperatureC}°C",
         "format-critical": " {temperatureC}°C"
     },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout"
+    },
     "custom/power-profiles": {
         "exec": "~/.config/waybar/scripts/power-profiles --get",
         "interval": 300,
@@ -200,16 +193,31 @@
         "restart-interval": 1,
         "icon": ""
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+    "custom/updates": {
+        "exec": "(paru -Qua; pacman -Su --print-format %n,%v) | wc -l",
+        "interval": 3600,
+        "format": "󰇚 {}",
+        "on-click": "activate"
     },
     "custom/vpn": {
         "exec": "nmcli con show --active | grep -i vpn | cut -d' ' -f1",
         "interval": 5,
         "format": "󰌾 {}"
+    },
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
+    },
+    "custom/recording-screen": {
+        "format": "{}",
+        "interval": "once",
+        "exec": "echo ' '",
+        "tooltip": false,
+        "exec-if": "pgrep -x wf-recorder",
+        "on-click": "~/.config/waybar/scripts/stop-recording.sh",
+        "signal": 8
     }
 }

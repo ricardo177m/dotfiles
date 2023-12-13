@@ -1,9 +1,18 @@
 #!/bin/bash
 
-if pgrep -x "wf-recorder" > /dev/null; then
-    pkill wf-recorder
-    notify-send "🔴 Recording stopped"
+if [ ! -z $(pgrep -x wf-recorder) ]; then
+    killall --signal SIGINT wf-recorder
+    while [ ! -z $(pgrep -x wf-recorder) ]; do wait; done
+    pkill -RTMIN+8 waybar
+    notify-send "🔴 Recording ended"
 else
-    wf-recorder -g "$(slurp)" -f ~/Videos/$(date +%Y-%m-%d-%H%M%S).mp4 &>/dev/null
-    # notify-send "🔴 Recording started"
+    geometry=$(slurp &> /dev/null)
+
+    if [ $? -eq "0" ]; then
+        wf-recorder -g "$geometry" -f ~/Videos/recordings/$(date +%Y-%m-%d-%H%M%S).mp4 -r 30 &>/dev/null &
+        pkill -RTMIN+8 waybar
+    else
+        notify-send "slurp errored"
+    fi
 fi
+
