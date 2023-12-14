@@ -1,0 +1,6 @@
+[Unit]
+Description=Battery notify
+
+[Service]
+ExecStart=/bin/bash .local/bin/batterynotify.sh
+

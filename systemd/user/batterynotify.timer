@@ -1,0 +1,12 @@
+[Unit]
+Description=Battery notify timer
+
+[Timer]
+OnBootSec=10
+OnCalendar=*:*:0
+; AccuracySec=30
+Unit=batterynotify.service
+
+[Install]
+WantedBy=timers.target
+
