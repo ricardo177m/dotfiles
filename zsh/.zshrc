@@ -136,6 +136,7 @@ export PATH
 # eval $(ssh-agent -s) > /dev/null
 # replaced by ssh-agent.service
 export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+export GPG_TTY=$(tty)
 
 autoload -Uz compinit
 compinit

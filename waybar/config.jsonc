@@ -20,7 +20,8 @@
         "memory",
         "temperature",
         // "custom/power-profiles",
-        "custom/recording-screen"
+        "custom/recording-screen",
+        "privacy"
     ],
     "modules-center": [], // hyprland/window
     "modules-right": [
@@ -179,6 +180,28 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "privacy": {
+        "icon-spacing": 8,
+        "icon-size": 13,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 18
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 18
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 18
+            }
+        ]
     },
     "custom/power": {
         "format": "",

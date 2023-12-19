@@ -65,6 +65,7 @@ tooltip {
 #custom-power-profiles,
 #idle_inhibitor,
 #custom-recording-screen,
+#privacy,
 #backlight {
     background: #232845;
     padding: 0px 10px;
@@ -72,7 +73,6 @@ tooltip {
 }
 
 #backlight {
-    /* background: #ff4444; */
     padding: 0;
 }
 
@@ -138,7 +138,7 @@ tooltip {
 
 #custom-power {
     color: #ff5555;
-    border-radius: 0px 16px 16px 0px;
+    border-radius: 0px 5px 5px 0px;
     border-left: 0px;
     border-right: 0px;
     padding-right: 15px;
@@ -173,5 +173,22 @@ tooltip {
 
 #custom-updates {
     color: #A7C080;
+}
+
+#privacy {
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#privacy-item.screenshare {
+    color: #FF0000;
+}
+
+#privacy-item.audio-in {
+    color: #FFC400; /* #00BBFF */
+}
+
+#privacy-item.audio-out {
+    color: #CDD6F4; /* #5D76F4 #00BBFF */
 }
 
