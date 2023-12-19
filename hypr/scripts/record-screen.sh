@@ -6,10 +6,10 @@ if [ ! -z $(pgrep -x wf-recorder) ]; then
     pkill -RTMIN+8 waybar
     notify-send "🔴 Recording ended"
 else
-    geometry=$(slurp &> /dev/null)
+    geometry=$(slurp)
 
     if [ $? -eq "0" ]; then
-        wf-recorder -g "$geometry" -f ~/Videos/recordings/$(date +%Y-%m-%d-%H%M%S).mp4 -r 30 &>/dev/null &
+        wf-recorder -g "$geometry" -f $XDG_RECORDINGS_DIR/$(date +%Y-%m-%d-%H%M%S).mp4 -r 30 &>/dev/null &
         pkill -RTMIN+8 waybar
     else
         notify-send "slurp errored"
