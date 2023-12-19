@@ -195,7 +195,7 @@
         "icon": ""
     },
     "custom/updates": {
-        "exec": "(paru -Qua; pacman -Su --print-format %n,%v) | wc -l",
+        "exec": "(paru -Qua;checkupdates) | wc -l",
         "interval": 900,
         "format": "󰇚 {}",
         "on-click": "activate"

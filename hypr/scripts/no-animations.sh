@@ -7,7 +7,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword decoration:blur:enabled 0;\
         keyword general:gaps_in 0;\
         keyword general:gaps_out 0;\
-        keyword general:border_size 1;\
+        # keyword general:border_size 1;\
         keyword decoration:rounding 0;\
         keyword misc:vfr 1"
     exit
